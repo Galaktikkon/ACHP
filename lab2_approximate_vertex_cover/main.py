@@ -62,8 +62,8 @@ if __name__ == "__main__":
         # graph_kernel, k, solution = kernelize(...)
 
         # TODO: implement solutions
-        solution = two_approx(G_edge_list)
-        # solution = logn_approx(G_edge_list)
+        # solution = two_approx(G_edge_list)
+        solution = logn_approx(G)
 
         if not solution:
             continue
@@ -72,5 +72,5 @@ if __name__ == "__main__":
         print("VC:", isVC(G_edge_list, solution))
         saveSolution(solution_filename, solution)
 
-        print(f'Elapsed time: {time.time() - t0:.4f}s')
+        print(f"Elapsed time: {time.time() - t0:.4f}s")
         print()

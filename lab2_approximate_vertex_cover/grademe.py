@@ -63,8 +63,9 @@ if len(argv) > 1:
 
 
 curr_dir = os.path.dirname(os.getcwd())
-graph_dir = os.path.join(curr_dir, "graphs")
-solution_dir = os.path.join(curr_dir, "graphs_solutions")
+print(curr_dir)
+graph_dir = os.path.join(curr_dir, "lab2_approximate_vertex_cover", "graphs")
+solution_dir = os.path.join(curr_dir, "lab2_approximate_vertex_cover", "solutions")
 
 
 def checkGraph(name):
@@ -76,8 +77,9 @@ def checkGraph(name):
         size = len(G)
         solution_name = os.path.join(solution_dir, name + ".sol")
         C = loadSolution(solution_name)
-    except IOError:
+    except IOError as e:
         s += "--- (%d)" % size
+        print(e)
         return (s, size, False)
 
     E = edgeList(G)
